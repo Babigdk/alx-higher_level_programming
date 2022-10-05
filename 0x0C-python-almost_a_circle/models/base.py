@@ -127,8 +127,8 @@ class Base():
                 elif cls.__name__ is "Square":
                     fields = ['id', 'size', 'x', 'y']
                 reader = csv.DictReader(f, fieldnames=fields)
-                dcts = [dict([k, int(v)] for k, v in l.items())
-                        for l in reader]
+                dcts = [dict([k, int(v)] for k, v in i.items())
+                        for i in reader]
                 return [cls.create(**dct) for dct in dcts]
 
         except IOError:
