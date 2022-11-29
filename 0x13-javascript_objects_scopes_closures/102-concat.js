@@ -1,8 +1,22 @@
 #!/usr/bin/node
-let fileA = process.argv[2];
-let fileB = process.argv[3];
-let fileC = process.argv[4];
-let fs = require('fs');
-let textA = fs.readFileSync(fileA, 'utf8');
-let textB = fs.readFileSync(fileB, 'utf8');
-fs.writeFileSync(fileC, textA + textB);
+
+let finalData = '';
+const fs = require('fs');
+
+fs.readFile(process.argv[2], (err, data) => {
+  if (err) throw err;
+
+  const dataFile1 = data.toString();
+  finalData += dataFile1;
+});
+
+fs.readFile(process.argv[3], (err, data) => {
+  if (err) throw err;
+
+  const dataFile2 = data.toString();
+  finalData += dataFile2;
+  const fs2 = require('fs');
+  fs2.writeFile(process.argv[4], finalData, (err) => {
+    if (err) throw err;
+  });
+});
