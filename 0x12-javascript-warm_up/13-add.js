@@ -1,4 +1,5 @@
 #!/usr/bin/node
-exports.add = function (a, b) {
-  return a + b;
+// function that adds two integers
+exports.add = function add (num1, num2) {
+  return (num1 + num2);
 };

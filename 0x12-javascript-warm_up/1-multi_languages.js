@@ -1,4 +1,8 @@
 #!/usr/bin/node
-console.log('C is fun');
-console.log('Python is cool');
-console.log('JavaScript is amazing');
+// Print 3 lines
+const array = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+let i = 0;
+while (i < 3) {
+  console.log(array[i]);
+  i++;
+}
