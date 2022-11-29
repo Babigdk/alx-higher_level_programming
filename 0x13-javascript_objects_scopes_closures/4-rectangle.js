@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// define class Rectangle version 3
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -6,16 +7,19 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
+
   print () {
-    for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
+    for (let j = 0; j < this.height; j++) {
+      console.log(Array(this.width + 1).join('X'));
     }
   }
+
   rotate () {
-    let tmp = this.width;
+    let temp = this.width;
     this.width = this.height;
-    this.height = tmp;
+    this.height = temp;
   }
+
   double () {
     this.width *= 2;
     this.height *= 2;
