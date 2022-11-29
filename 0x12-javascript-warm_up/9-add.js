@@ -1,12 +1,9 @@
 #!/usr/bin/node
-'use strict';
-let a = process.argv[2];
-let b = process.argv[3];
+const myArgs = process.argv.slice(2);
+let result = 0;
 function add (a, b) {
-  if (isNaN(a) || isNaN(b)) {
-    return (NaN);
-  } else {
-    return (parseInt(a) + parseInt(b));
-  }
+  result = a + b;
+  return result;
 }
-console.log(add(a, b));
+add(parseInt(myArgs[0]), parseInt(myArgs[1]));
+console.log(result);

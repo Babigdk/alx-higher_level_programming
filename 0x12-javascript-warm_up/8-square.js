@@ -1,10 +1,14 @@
 #!/usr/bin/node
-'use strict';
-let x = process.argv[2];
-if (isNaN(x)) {
+const myArgs = process.argv.slice(2);
+let i, j;
+if (isNaN(myArgs[0])) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < x; i++) {
-    console.log('X'.repeat(x));
+  for (i = 0; i < parseInt(myArgs[0]); i++) {
+    let row = '';
+    for (j = 0; j < parseInt(myArgs[0]); j++) {
+      row += 'X';
+    }
+    console.log(row);
   }
 }
